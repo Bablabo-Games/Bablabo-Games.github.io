@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'comicoro';
+  src: url('res/fonts/comicoro-webfont.woff2') format('woff2'),
+  url('res/fonts/comicoro-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'comicoro', sans-serif;
+}
+
+.pixel_perfect {
+  image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;          /* Firefox                        */
+  image-rendering: -o-crisp-edges;            /* Opera                          */
+  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+  image-rendering: pixelated;                 /* Universal support since 2021   */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
+html {
+  font-size: clamp(36px, 1.5vw, 48px);
+}
+
+h1 {
+  font-family: 'Cherry Bomb One', sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: clamp(36px, 3vw, 48px);
+
+  text-transform: uppercase;
+
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--yellow);
+}
+
+body {
+  background-color: #3671E9;
+  color: var(--white);
+  
+  margin: 0;
+}
+
+.bg-grid {
+  background-image: linear-gradient(180deg, #3671E900 0%, #3671E9FF 90%), url("res/bg/grid.svg");
+
+  width: 100%;
+  height: 1000px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+header {
+  width: 90%;
+  margin: 1% 5%;
+  
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-links {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.content {
+  width: 90%;
+  margin: 2% 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 480px;
+}
