@@ -96,7 +96,7 @@ header {
 
 .content {
   width: calc(min(90%, 2400px));
-  margin: 0 5%;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
