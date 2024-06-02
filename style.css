@@ -62,24 +62,29 @@ body {
 .bg-grid {
   background-image: linear-gradient(180deg, #3671E900 0%, #3671E9FF 90%), url("res/bg/grid.svg");
 
-  width: 100%;
-  height: 1000px;
+  width: 200%;
+  height: 80vh;
 
   position: absolute;
   top: 0;
-  left: 0;
+  left: -50%;
   z-index: -100;
 }
 
 header {
-  width: 80%;
+  position: fixed;
+  z-index: 100;
+
+  width: 100%;
   height: 5vh;
-  margin: 1% 10% 0 10%;
+  padding: 1.5% 10% 2% 10%;
   
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  background-image: linear-gradient(0, #2153B800 30%, #2153B8FF 150%);
 }
 
 .header-links {
@@ -90,27 +95,44 @@ header {
 }
 
 .content {
-  width: 90%;
+  width: calc(min(90%, 2400px));
   margin: 0 5%;
 
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
-}
-
-.hero {
-  width: 100%;
-  height: 90vh;
 
   position: relative;
 }
 
-.bg-doodles {
+.bg-doodles-tile {
+  position: absolute;
+  top: 50vh;
+  left: -10%;
+
+  width: 120%;
+  height: calc(100% - 45vh);
+
+  /* background-color: #f00; */
+  background: url("res/bg/BG\ Doodles\ Tile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+
+  position: relative;
+}
+
+.bg-doodles-hero {
   width: 100%;
   position: absolute;
 
-  top: 5vh;
+  top: 10vh;
 }
 
 .bottom {
@@ -129,11 +151,11 @@ header {
 }
 
 .logo {
-  --_width: calc(max(25vw, 25vh));
+  --_width: calc(min(25vw, 45vh));
 
   width: var(--_width);
   position: absolute;
-  top: 15%;
+  top: 20%;
   left: calc(50% - var(--_width) / 2);
 }
 
@@ -192,4 +214,22 @@ header {
 .btn-wishlist-hero > .link-wishlist {
   position: relative;
   left: -50%;
+}
+
+.trailer {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+
+  position: relative;
+}
+
+.trailer > iframe {
+  height: 50vh;
+  width: calc(16 * 50vh / 9);
 }
