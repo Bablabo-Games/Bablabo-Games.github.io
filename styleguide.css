@@ -6,4 +6,15 @@
   --orange-yellow: #FFAF48;
 
   --header-dark-blue: #2153B8;
+  --copyright-light-blue: #ABC7FF;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #000;
+  background: var(--yellow);
+}
+
+::selection {
+  color: #000;
+  background: var(--yellow);
 }
