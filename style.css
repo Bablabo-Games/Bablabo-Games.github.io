@@ -34,11 +34,17 @@ img, video {
 h1 {
   font-family: 'Cherry Bomb One', sans-serif;
   letter-spacing: 0.1rem;
-  font-size: clamp(36px, 4vh, 48px);
+  font-size: clamp(36px, 3.5vh, 48px);
 
   text-transform: uppercase;
 
   margin: 0;
+}
+
+h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--orange-yellow);
 }
 
 a {
@@ -80,15 +86,20 @@ header {
   z-index: 100;
 
   width: 100%;
-  height: 5vh;
-  padding: calc(max(3vh, 2%)) 10% 2% 10%;
+  max-height: 3vh;
+  padding: calc(max(2vh, 1.75%)) 10% 2% 10%;
   
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
-  background-image: linear-gradient(0, #00000000 20%, #00000066 100%);
+  background-color: none;
+  transition: all ease-out 500ms;
+}
+
+.header-opaque {
+  background-color: var(--bg-dark-blue);
 }
 
 .prevent-selection {
@@ -104,7 +115,7 @@ header {
   gap: 1rem;
 }
 
-.content {
+#content {
   width: calc(min(90%, 2400px));
   margin: 0 auto;
 
@@ -241,10 +252,13 @@ header {
 }
 
 .trailer {
+  --_trailer-height: min(50vh, 50vw);
+  --_trailer-width: calc(16 * var(--_trailer-height) / 9);
+
   width: 100%;
   height: 100vh;
 
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -254,15 +268,20 @@ header {
 }
 
 .trailer > iframe {
-  --_height: min(50vh, 50vw);
+  height: var(--_trailer-height);
+  width: var(--_trailer-width);
+}
 
-  height: var(--_height);
-  width: calc(16 * var(--_height) / 9);
+.game-description {
+  height: fit-content;
+  width: var(--_trailer-width);
+  
+  text-align: center;
 }
 
 .footer {
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
 
   display: flex;
   flex-direction: column;
