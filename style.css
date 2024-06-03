@@ -24,7 +24,7 @@
 }
 
 html {
-  font-size: clamp(18px, 1.5vw, 48px);
+  font-size: clamp(18px, 2.5vh, 48px);
 }
 
 img, video {
@@ -34,7 +34,7 @@ img, video {
 h1 {
   font-family: 'Cherry Bomb One', sans-serif;
   letter-spacing: 0.1rem;
-  font-size: clamp(24px, 3vw, 48px);
+  font-size: clamp(36px, 4vh, 48px);
 
   text-transform: uppercase;
 
@@ -81,14 +81,20 @@ header {
 
   width: 100%;
   height: 5vh;
-  padding: 1.5% 10% 2% 10%;
+  padding: calc(max(3vh, 2%)) 10% 2% 10%;
   
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
-  background-image: linear-gradient(0, #2153B800 30%, #2153B8FF 150%);
+  background-image: linear-gradient(0, #00000000 20%, #00000066 100%);
+}
+
+.prevent-selection {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .header-links {
@@ -113,11 +119,13 @@ header {
 .bg-doodles-tile {
   position: absolute;
   top: 50vh;
-  left: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+
   z-index: -100;
 
-  width: 120%;
-  height: calc(100% - 45vh);
+  width: min(120vw, 2760px);
+  height: calc(100% - 50vh);
 
   /* background-color: #f00; */
   background: url("res/bg/BG\ Doodles\ Tile.png");
@@ -134,10 +142,12 @@ header {
 }
 
 .bg-doodles-hero {
-  width: 100%;
-  position: absolute;
+  height: 45vh;
 
-  top: 10vh;
+  position: absolute;
+  top: calc(50% - 18.5vh);
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 .bottom {
@@ -148,15 +158,24 @@ header {
   left: 0;
 }
 
-.bg-peeps {
-  width: 110%;
-  position: relative;
+.peeps {
+  height: 27.5vh;
+  width: 100%;
+}
 
-  left: -5%;
+.bg-peeps {
+  height: 100%;
+  max-width: none;
+  width: auto;
+  
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 .logo {
-  --_width: calc(min(25vw, 45vh));
+  --_width: calc(max(25vw, 30vh));
 
   width: var(--_width);
   position: absolute;
@@ -235,8 +254,10 @@ header {
 }
 
 .trailer > iframe {
-  height: 50vh;
-  width: calc(16 * 50vh / 9);
+  --_height: min(50vh, 50vw);
+
+  height: var(--_height);
+  width: calc(16 * var(--_height) / 9);
 }
 
 .footer {
