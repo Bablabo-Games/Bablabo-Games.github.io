@@ -48,6 +48,11 @@ h2 {
   color: var(--orange-yellow);
 }
 
+h3 {
+  font-weight: 400;
+  color: var(--orange-yellow);
+}
+
 a {
   text-decoration: none;
   color: var(--white);
@@ -135,6 +140,7 @@ header {
   flex-direction: column;
   align-content: center;
   align-items: center;
+  gap: 2rem;
 
   position: relative;
 }
@@ -147,7 +153,7 @@ header {
 
   z-index: -100;
 
-  width: min(120vw, 2760px);
+  width: min(110vw, 2460px);
   height: calc(100% - 50vh);
 
   /* background-color: #f00; */
@@ -289,6 +295,51 @@ header {
   width: var(--_trailer-width);
   
   text-align: center;
+}
+
+#about {
+  margin: 0 auto;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.about-section:nth-child(even) {
+  flex-direction: row;
+}
+
+.about-section > * {
+  position: relative;
+}
+
+.about-text {
+  width: 35vw;
+}
+
+.about-image {
+  width: min(50vw, 35vh);
+}
+
+.about-image-border {
+  width: 120%;
+  height: 120%;
+
+  position: absolute;
+  top: -10%;
+  left: -10%;
+
+  fill: var(--yellow);
 }
 
 #team {
