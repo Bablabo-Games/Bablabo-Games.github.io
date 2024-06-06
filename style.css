@@ -24,7 +24,7 @@
 }
 
 html {
-  font-size: clamp(18px, 2.5vh, 48px);
+  font-size: clamp(18px, 2.5svh, 48px);
   scroll-behavior: smooth;
 }
 
@@ -35,7 +35,7 @@ img, video {
 h1 {
   font-family: 'Cherry Bomb One', sans-serif;
   letter-spacing: 0.1rem;
-  font-size: clamp(36px, 3.5vh, 48px);
+  font-size: clamp(36px, 3.5svh, 48px);
 
   text-transform: uppercase;
 
@@ -79,7 +79,7 @@ body {
   background-image: linear-gradient(180deg, #3671E900 0%, #3671E9FF 90%), url("res/bg/grid.svg");
 
   width: 200%;
-  height: 80vh;
+  height: 80svh;
 
   position: absolute;
   top: 0;
@@ -92,8 +92,8 @@ header {
   z-index: 100;
 
   width: 100%;
-  max-height: 3vh;
-  padding: calc(max(2vh, 1.75%)) 10% 2% 10%;
+  max-height: 3svh;
+  padding: calc(max(2svh, 1.75%)) 10% 2% 10%;
   
   display: inline-flex;
   flex-direction: row;
@@ -139,62 +139,45 @@ header {
 }
 
 #content {
-  width: calc(min(90%, 2400px));
+  width: calc(min(90svw, 2400px));
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 6rem;
 
   position: relative;
 }
 
-.bg-doodles-tile {
+.section-background {
   position: absolute;
-  top: 50vh;
-  left: 50%;
-  transform: translateX(-50%);
-
-  z-index: -100;
-
-  width: min(110vw, 2460px);
-  height: calc(100% - 50vh);
-
-  /* background-color: #f00; */
-  background: url("res/bg/BG\ Doodles\ Tile.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+  width: 100%;
 }
 
 #hero {
   width: 100%;
-  height: 100vh;
+  height: 100svh;
 
   position: relative;
 }
 
 .bg-doodles-hero {
-  height: 45vh;
-
-  position: absolute;
-  top: calc(50% - 18.5vh);
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
+  top: calc(50% - 18.5svh);
+  transform: translateY(-50%);
 }
 
 .bottom {
   position: absolute;
   width: 100%;
 
-  bottom: 2.5vh;
+  bottom: 2.5svh;
   left: 0;
 }
 
 .peeps {
-  height: 27.5vh;
+  height: 27.5svh;
   width: 100%;
 }
 
@@ -210,7 +193,7 @@ header {
 }
 
 .logo {
-  --_width: calc(max(25vw, 30vh));
+  --_width: calc(max(25svw, 30svh));
 
   width: var(--_width);
   position: absolute;
@@ -222,7 +205,7 @@ header {
   text-decoration: none;
   text-transform: uppercase;
 
-  width: clamp(240px, 30vw, 480px);
+  width: clamp(240px, 30svw, 480px);
   padding: 10px;
   border: var(--white) 2px solid;
   border-radius: 40px;
@@ -276,11 +259,11 @@ header {
 }
 
 #trailer {
-  --_trailer-height: min(50vh, 50vw);
+  --_trailer-height: min(50svh, 50svw);
   --_trailer-width: calc(16 * var(--_trailer-height) / 9);
 
   width: 100%;
-  height: 100vh;
+  height: 100svh;
 
   display: inline-flex;
   flex-direction: column;
@@ -330,7 +313,7 @@ header {
 }
 
 .about-text {
-  width: 35vw;
+  width: 35svw;
 }
 
 .about-image-container {
@@ -339,7 +322,7 @@ header {
 }
 
 .about-image {
-  width: min(50vw, 35vh);
+  width: min(50svw, 35svh);
 }
 
 .about-image-border {
@@ -364,11 +347,11 @@ header {
 }
 
 .team-description {
-  width: 35vw;
+  width: 35svw;
 }
 
 .team-polaroid {
-  width: min(50vw, 25vh);
+  width: min(50svw, 25svh);
   height: auto;
 
   transform: rotate(15deg);
