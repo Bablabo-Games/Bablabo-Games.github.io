@@ -24,7 +24,7 @@
 }
 
 html {
-  font-size: clamp(18px, 2.5svh, 48px);
+  font-size: clamp(24px, 1.5vw, 48px);
   scroll-behavior: smooth;
 }
 
@@ -35,7 +35,7 @@ img, video {
 h1 {
   font-family: 'Cherry Bomb One', sans-serif;
   letter-spacing: 0.1rem;
-  font-size: clamp(36px, 3.5svh, 48px);
+  font-size: clamp(36px, 2.618svw, 48px);
 
   text-transform: uppercase;
 
@@ -140,20 +140,26 @@ header {
 
 #content {
   width: calc(min(90svw, 2400px));
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
 
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
-  gap: 6rem;
+  gap: 10vh;
 
+  position: relative;
+}
+
+.section {
   position: relative;
 }
 
 .section-background {
   position: absolute;
+
   max-width: 2400px;
+  width: max(800px, 100vw);
   z-index: -99;
 }
 
@@ -345,6 +351,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
