@@ -139,7 +139,7 @@ header {
 }
 
 #content {
-  width: calc(min(90svw, 2400px));
+  width: calc(min(90%, 2400px));
   margin: 0 auto 1rem auto;
 
   display: flex;
@@ -161,8 +161,7 @@ header {
 .section-background {
   position: absolute;
 
-  max-width: 2400px;
-  width: max(800px, 100vw);
+  width: clamp(800px, 100%, 2400px);
   z-index: -99;
 }
 
@@ -300,6 +299,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  margin: 0 2rem;
 }
 
 #mochi-container {
@@ -391,6 +392,45 @@ header {
   left: -10%;
 
   fill: var(--yellow);
+}
+
+#bosses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#boss-polaroid-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.boss-polaroid {
+  height: min(4rem, 160px);
+}
+
+.boss-polaroid:nth-child(1) {
+  transform: rotate(-1.75deg);
+}
+
+.boss-polaroid:nth-child(2) {
+  transform: rotate(5deg);
+}
+
+.boss-polaroid:nth-child(3) {
+  transform: rotate(-1deg);
+}
+
+.boss-polaroid:nth-child(4) {
+  transform: rotate(0);
+}
+
+.boss-polaroid:nth-child(5) {
+  transform: rotate(2deg);
 }
 
 #team {
