@@ -38,7 +38,6 @@ h1 {
   font-size: clamp(36px, 3.5svh, 48px);
 
   text-transform: uppercase;
-  color: var(--yellow);
 
   margin: 0;
 }
@@ -71,12 +70,12 @@ body {
   background-color: #3671E9;
   color: var(--white);
   margin: 0;
-
-  overflow-x: hidden;
 }
 
 .everything {
+  width: 100svw;
   overflow-x: hidden;
+  height: fit-content;
 }
 
 .bg-grid {
