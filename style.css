@@ -71,21 +71,23 @@ body {
   background-color: #3671E9;
   color: var(--white);
   margin: 0;
+}
 
+.everything {
+  width: 100svw;
   overflow-x: hidden;
-  position: relative;
+  height: fit-content;
 }
 
 .bg-grid {
   background-image: linear-gradient(180deg, #3671E900 0%, #3671E9FF 90%), url("res/bg/grid.svg");
 
-  width: 200%;
+  width: 110%;
   height: 80svh;
 
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: -5%;
   z-index: -100;
 }
 
