@@ -36,7 +36,6 @@ h1 {
   font-family: 'Cherry Bomb One', sans-serif;
   letter-spacing: 0.1rem;
   font-size: clamp(36px, 3.5svh, 48px);
-  color: var(--yellow);
 
   text-transform: uppercase;
 
