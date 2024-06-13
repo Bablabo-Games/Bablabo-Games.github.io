@@ -26,6 +26,8 @@
 html {
   font-size: clamp(24px, 2.5svh, 48px);
   scroll-behavior: smooth;
+
+  overflow-x: hidden;
 }
 
 img, video {
@@ -38,6 +40,7 @@ h1 {
   font-size: clamp(36px, 3.5svh, 48px);
 
   text-transform: uppercase;
+  color: var(--yellow);
 
   margin: 0;
 }
@@ -74,6 +77,7 @@ body {
   width: 100svw;
 
   overflow-x: hidden;
+  position: relative;
 }
 
 .bg-grid {
