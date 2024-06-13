@@ -28,6 +28,7 @@ html {
   scroll-behavior: smooth;
 
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 img, video {
@@ -75,8 +76,8 @@ body {
   
   margin: 0;
   width: 100svw;
+  height: fit-content;
 
-  overflow-x: hidden;
   position: relative;
 }
 
