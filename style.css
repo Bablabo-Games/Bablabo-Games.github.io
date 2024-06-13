@@ -24,7 +24,7 @@
 }
 
 html {
-  font-size: clamp(24px, 1.5vw, 48px);
+  font-size: clamp(24px, 2.5svh, 48px);
   scroll-behavior: smooth;
 }
 
@@ -35,7 +35,7 @@ img, video {
 h1 {
   font-family: 'Cherry Bomb One', sans-serif;
   letter-spacing: 0.1rem;
-  font-size: clamp(36px, 2.618svw, 48px);
+  font-size: clamp(36px, 3.5svh, 48px);
 
   text-transform: uppercase;
 
@@ -91,7 +91,7 @@ header {
   position: fixed;
   z-index: 100;
 
-  width: 100%;
+  width: 100svw;
   max-height: 3svh;
   padding: calc(max(2svh, 1.75%)) 10% 2% 10%;
   
@@ -161,7 +161,7 @@ header {
 .section-background {
   position: absolute;
 
-  width: clamp(800px, 100%, 2400px);
+  width: 2400px;
   z-index: -99;
 }
 
@@ -186,7 +186,7 @@ header {
 }
 
 .peeps {
-  height: 27.5svh;
+  height: min(12rem, 470px);
   width: 100%;
 }
 
@@ -202,20 +202,18 @@ header {
 }
 
 .logo {
-  --_width: calc(max(25svw, 30svh));
-
-  width: var(--_width);
+  width: min(18rem, 80%);
   position: absolute;
-  top: 20%;
-  left: calc(50% - var(--_width) / 2);
+  top: 20vh;
+  left: 50%;
+  transform: translateY(-10%) translateX(-50%);
 }
 
 .link-wishlist {
   text-decoration: none;
   text-transform: uppercase;
 
-  width: clamp(240px, 30svw, 480px);
-  padding: 10px;
+  padding: 10px 50px;
   border: var(--white) 2px solid;
   border-radius: 40px;
 
@@ -232,6 +230,7 @@ header {
 
 .link-wishlist * {
   fill: var(--white);
+  white-space: nowrap;
 }
 
 .link-wishlist:hover {
@@ -271,13 +270,13 @@ header {
   --_trailer-height: min(50svh, 50svw);
   --_trailer-width: calc(16 * var(--_trailer-height) / 9);
 
-  height: 100svh;
+  margin: 5rem 0;
 
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
 
   position: relative;
 }
@@ -343,7 +342,9 @@ header {
 #mochi-marker {
   position: absolute;
   bottom: -2rem;
-  left: -2rem;
+  transform: translateX(-110%);
+
+  height: min(50%, 324px);
 }
 
 #about {
@@ -400,11 +401,14 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
 }
 
 #boss-polaroid-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -447,7 +451,7 @@ header {
 }
 
 .team-polaroid {
-  width: min(50svw, 25svh);
+  width: 10rem;
   height: auto;
 
   transform: rotate(15deg);
@@ -489,4 +493,50 @@ header {
 .copyright {
   margin-top: 1.5rem;
   color: var(--copyright-light-blue);
+}
+
+@media screen and (max-width: 1080px) {
+  header {
+    flex-direction: column;
+    max-height: none;
+    padding: 0;
+    padding-bottom: 4%;
+    justify-content: center;
+  }
+
+  #header-bg {
+    background-image: linear-gradient(0, #3671E900 0%, #3671E9EE 50%);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #trailer {
+    margin: 0;
+  }
+
+  .about-section {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .about-section:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+  
+  .about-text {
+    width: 85svw;
+  }
+
+  .about-image {
+    width: 80svw;
+  }
+
+  #team {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #team > div {
+    width: 100%;
+  }
 }
