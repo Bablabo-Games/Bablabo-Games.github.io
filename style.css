@@ -41,7 +41,7 @@ h1 {
   font-size: clamp(36px, 3.5svh, 48px);
 
   text-transform: uppercase;
-  color: var(--bg-dark-blue);
+  /* color: var(--bg-dark-blue); */
 
   margin: 0;
 }
