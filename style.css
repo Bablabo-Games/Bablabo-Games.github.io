@@ -551,4 +551,9 @@ header {
   #team > div {
     width: 100%;
   }
+
+  /* Kind of a hack to reduce margin at the bottom of the page but can't do much now :P */
+  #footer > .section-background {
+    height: 0;
+  }
 }
