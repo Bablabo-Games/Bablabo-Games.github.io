@@ -26,9 +26,6 @@
 html {
   font-size: clamp(24px, 2.5svh, 48px);
   scroll-behavior: smooth;
-
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 img, video {
@@ -41,7 +38,7 @@ h1 {
   font-size: clamp(36px, 3.5svh, 48px);
 
   text-transform: uppercase;
-  /* color: var(--bg-dark-blue); */
+  color: var(--yellow);
 
   margin: 0;
 }
@@ -73,12 +70,13 @@ a:active {
 body {
   background-color: #3671E9;
   color: var(--white);
-  
   margin: 0;
-  width: 100svw;
-  height: fit-content;
 
-  position: relative;
+  overflow-x: hidden;
+}
+
+.everything {
+  overflow-x: hidden;
 }
 
 .bg-grid {
@@ -89,7 +87,8 @@ body {
 
   position: absolute;
   top: 0;
-  left: -50%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: -100;
 }
 
