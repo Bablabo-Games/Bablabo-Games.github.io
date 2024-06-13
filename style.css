@@ -300,7 +300,7 @@ header {
   justify-content: center;
   align-items: center;
 
-  margin: 0 2rem;
+  margin: 0 2rem 2rem 2rem;
 }
 
 #mochi-container {
@@ -381,6 +381,7 @@ header {
 
 .about-image {
   width: min(50svw, 35svh);
+  background-color: #000;
 }
 
 .about-image-border {
