@@ -78,7 +78,9 @@ body {
   width: 100%;
   height: 100svh;
 
+  overflow-x: hidden;
   overflow-y: scroll;
+  position: relative;
 }
 
 .bg-grid {
