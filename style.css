@@ -74,6 +74,11 @@ body {
   overflow: hidden;
 }
 
+.selected-tab {
+  text-decoration: underline;
+  color: var(--yellow);
+}
+
 #everything {
   width: 100svw;
   height: 100svh;
@@ -153,7 +158,7 @@ header {
   flex-direction: column;
   align-content: center;
   align-items: center;
-  gap: 10vh;
+  gap: 5vh;
 
   position: relative;
 }
@@ -288,7 +293,7 @@ header {
   position: relative;
 }
 
-#trailer > iframe {
+iframe {
   height: var(--_trailer-height);
   width: var(--_trailer-width);
 }
@@ -506,6 +511,108 @@ header {
   color: var(--copyright-light-blue);
 }
 
+/* Press Kit Stuff */
+
+#press-kit-text {
+  width: 9rem;
+
+  position: absolute;
+  top: min(46vh, 78svw);
+  left: min(55%, 60svw);
+  transform: translateY(-10%) translateX(-50%) rotate(-15deg);
+}
+
+#press-kit-hero {
+  height: 50svh;
+}
+
+#press-kit-hero .logo {
+  width: min(18rem, 80%);
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  transform: translateY(-10%) translateX(-50%);
+}
+
+#about-game,
+#press-kit-team,
+#press-kit-gallery {
+  --_trailer-height: min(50svh, 50svw);
+  --_trailer-width: calc(16 * var(--_trailer-height) / 9);
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+#about-game iframe {
+  margin-bottom: 2rem;
+}
+
+.press-kit-section {
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: space-between;
+  gap: 1rem;
+
+  width: var(--_trailer-width);
+}
+
+.press-kit-section p,
+.press-kit-section h2,
+.press-kit-section ul {
+  margin: 0.5rem 0;
+}
+
+.press-kit-section > .left {
+  width: 75%;
+}
+
+.press-kit-info {
+  margin-bottom: 1.5rem;
+}
+
+.credits-name {
+  color: #FFDF88;
+}
+
+.team-image-container {
+  width: fit-content;
+  height: fit-content;
+
+  position: relative;
+}
+
+.team-image-container > img {
+  transform: rotate(-2.5deg);
+  box-shadow: 0.15rem 0.15rem 0.25rem #00000044;
+}
+
+.team-image-border {
+  width: 120%;
+  height: 120%;
+  
+  position: absolute;
+  top: -10%;
+  left: -10%;
+
+  fill: var(--yellow)
+}
+
+#gallery-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.gallery-image {
+  width: 100%;
+}
+
 @media screen and (max-width: 1080px) {
   header {
     flex-direction: column;
@@ -554,5 +661,15 @@ header {
   /* Kind of a hack to reduce margin at the bottom of the page but can't do much now :P */
   #footer > .section-background {
     height: 0;
+  }
+
+  .press-kit-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .press-kit-section > .left {
+    width: 100%;
   }
 }
