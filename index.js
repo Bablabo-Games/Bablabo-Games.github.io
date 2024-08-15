@@ -19,16 +19,16 @@ function onLoad() {
 }
 
 const imgFiles = [
-  '1. Bedroom.jpg',
-  '2. Bus Intro.jpg',
-  '3. Walking.jpg',
-  '4. Walking.jpg',
-  '5. Task Interaction.jpg',
-  '6. Button Mashing.jpg',
-  '7. NPC Spreading Gossip.jpg',
-  '8. Annoying Kid.jpg',
-  '9. Influencer Intro.jpg',
-  '10. Influencer Minigame.jpg'
+  '1. Gossip.png',
+  '2. Bus.png',
+  '3. Task.png',
+  '5. Physics Lab.png',
+  '6. Sports Room.png',
+  '7. Library.png',
+  '8. Button Mashing.png',
+  '11. Drinking Water.png',
+  '13. Influencer Intro.png',
+  '14. Influencer Minigame.png'
 ]
 
 function loadGallery() {
