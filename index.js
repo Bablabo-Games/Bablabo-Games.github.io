@@ -41,6 +41,8 @@ function loadGallery() {
 
     let img = document.createElement('img');
     img.src = src;
+    img.alt = 'Screenshot ' + i;
+    img.loading = 'lazy'
     img.classList.add('gallery-image');
     galleryContainer.appendChild(img);
   }
