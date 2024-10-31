@@ -228,7 +228,7 @@ header {
   transform: translateY(-10%) translateX(-50%);
 }
 
-.link-wishlist {
+.link-steam {
   text-decoration: none;
   text-transform: uppercase;
 
@@ -247,12 +247,12 @@ header {
   transition: 100ms;
 }
 
-.link-wishlist * {
+.link-steam * {
   fill: var(--white);
   white-space: nowrap;
 }
 
-.link-wishlist:hover {
+.link-steam:hover {
   cursor: pointer;
   background-color: #131313A0;
   gap: 0.5em;
@@ -260,19 +260,19 @@ header {
   text-decoration: none;
 }
 
-.link-wishlist:active {
+.link-steam:active {
   background-color: #131313F0;
   border-color: var(--yellow);
 
   transition: 10ms;
 }
 
-.link-wishlist:active * {
+.link-steam:active * {
   color: var(--yellow);
   fill: var(--yellow);
 }
 
-.btn-wishlist-hero {
+.btn-steam-hero {
   width: fit-content;
   
   position: absolute;
@@ -280,7 +280,7 @@ header {
   top: 35%;
 }
 
-.btn-wishlist-hero > .link-wishlist {
+.btn-steam-hero > .link-steam {
   position: relative;
   left: -50%;
 }
@@ -624,10 +624,6 @@ iframe {
 
   align-content: center;
   order: 2;
-}
-
-#download-button:hover {
-  /* text-decoration: none; */
 }
 
 #download-button::after {
