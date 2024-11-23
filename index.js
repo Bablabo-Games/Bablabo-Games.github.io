@@ -33,7 +33,7 @@ const imgFiles = [
 
 function loadGallery() {
   console.log('Loading Gallery Images')
-  const galleryContainer = document.getElementById('gallery-container');
+  const galleryContainer = document.getElementById('press-kit-gallery');
   
   for (let i = 0; i < imgFiles.length; i++) {
     const src = 'res/img/presskit/' + imgFiles[i];  // Used for offline

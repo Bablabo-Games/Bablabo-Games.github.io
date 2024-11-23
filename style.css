@@ -289,7 +289,7 @@ header {
   --_trailer-height: min(50svh, 50svw);
   --_trailer-width: calc(16 * var(--_trailer-height) / 9);
 
-  margin: 5rem 0;
+  margin: 5rem 0 0 0;
 
   display: inline-flex;
   flex-direction: column;
@@ -303,6 +303,9 @@ header {
 iframe {
   height: var(--_trailer-height);
   width: var(--_trailer-width);
+
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .game-description {
@@ -413,6 +416,20 @@ iframe {
   left: -10%;
 
   fill: var(--yellow);
+}
+
+.media-coverage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: fit-content;
+}
+
+.media-coverage-container .media-link {
+  width: fit-content;
+  height: fit-content;
 }
 
 #bosses {
@@ -527,9 +544,12 @@ iframe {
   top: min(46vh, 78svw);
   left: min(55%, 60svw);
   transform: translateY(-10%) translateX(-50%) rotate(-15deg);
+
+  text-wrap: nowrap;
 }
 
-#press-kit-hero {
+#press-kit-hero,
+#media-coverage-hero {
   height: min(50svh, 100svw);
 }
 
@@ -543,10 +563,15 @@ iframe {
 
 #about-game,
 #press-kit-team,
-#press-kit-gallery {
+#press-kit-gallery-section,
+.media-coverage-section {
   --_trailer-height: min(50svh, 50svw);
   --_trailer-width: calc(16 * var(--_trailer-height) / 9);
+}
 
+#about-game,
+#press-kit-team,
+#press-kit-gallery-section {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -610,7 +635,7 @@ iframe {
   fill: var(--yellow)
 }
 
-#download-button {
+.link-button {
   color: var(--bg-dark-blue);
   position: relative;
 
@@ -620,13 +645,14 @@ iframe {
   height: 100%;
 
   padding: 0.25rem 0.56rem;
-  text-align: center;
 
+  text-align: center;
   align-content: center;
+
   order: 2;
 }
 
-#download-button::after {
+.link-button::after {
   content: '';
 
   width: 100%;
@@ -640,19 +666,179 @@ iframe {
   background-color: var(--yellow);
 }
 
-#download-button:hover::after {
+.link-button:hover {
   transform: scale(105%);
   transition: 0.1s ease-out;
 }
 
-#gallery-container {
+.gallery-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0.5rem;
+
+  max-width: 100%;
+  height: fit-content;
 }
 
 .gallery-image {
   width: 100%;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+}
+.media-coverage-section {
+  width: calc(min(var(--_trailer-width) + 7rem, 100%));
+}
+
+#youtube-videos iframe {
+  aspect-ratio: 1.9;
+  width: 100%;
+  height: 100%;
+}
+
+#debug {
+  width: 100%;
+  height: var(--_trailer-height);
+
+  max-width: 100%;
+  max-height: 100%;
+
+  background-color: #f00;
+}
+
+#articles-and-reviews {
+  grid-template-columns: 1fr 1fr;
+}
+
+.media-link {
+  color: var(--white);
+  position: relative;
+
+  margin: auto;
+  
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  padding: 0.25rem 1rem;
+}
+
+.gallery-container .media-link {
+  min-height: 10rem;
+}
+
+.media-link::after {
+  content: '';
+
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background-color: var(--bg-dark-blue);
+}
+
+.media-link h3 {
+  color: var(--yellow);
+  margin: 0;
+}
+
+.media-link p {
+  height: 0;
+  margin: 0;
+
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.media-link img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border-style: none;
+  border: none;
+}
+
+.media-details {
+  position: absolute;
+
+  width: 100%;
+  height: 4rem;
+
+  top: 100%;
+  left: 0;
+  transform: translateY(-100%);
+
+  --_blur-amount: 14px;
+  -webkit-backdrop-filter: blur(var(--_blur-amount));
+  backdrop-filter: blur(var(--_blur-amount));
+  
+  padding: 0.5rem 1rem;
+
+  transition: 0.1s ease-out;
+}
+
+.media-details::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  position: absolute;
+  
+  background-color: var(--bg-dark-blue);
+  opacity: 75%;
+
+  z-index: -1;
+}
+
+.media-link span {
+  text-decoration: none;
+
+  color: var(--yellow);
+
+  width: fit-content;
+  text-wrap: nowrap;
+
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translateX(calc(-100% - 1rem)) translateY(calc(-100% - 0.5rem));
+
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.media-link:hover {
+  transform: scale(105%);
+  transition: 0.1s ease-out;
+}
+
+.media-link:hover .media-details {
+  height: 100%;
+  transition: height 0.1s ease-out;
+}
+
+.media-link:hover p {
+  height: fit-content;
+  margin: 0.5rem 0 0 0;
+  opacity: 100%;
+}
+
+.media-link:hover span {
+  text-decoration: underline;
+  opacity: 100%;
 }
 
 @media screen and (max-width: 1080px) {
@@ -668,7 +854,8 @@ iframe {
     background-image: linear-gradient(0, #3671E900 0%, #3671E9EE 50%);
   }
 
-  #press-kit-hero {
+  #press-kit-hero,
+  #media-coverage-hero {
     margin-top: 5svh;
   }
 }
@@ -717,5 +904,26 @@ iframe {
   
   .press-kit-section > .left {
     width: 100%;
+  }
+  
+  .gallery-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  #articles-and-reviews,
+  #youtube-videos {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-container .media-link {
+    min-height: 12.5rem;
+  }
+
+  .media-coverage-section h2 {
+    text-align: center;
+  }
+
+  .media-details {
+    height: 5rem;
   }
 }
