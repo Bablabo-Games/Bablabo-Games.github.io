@@ -826,7 +826,7 @@ iframe {
 }
 
 .media-link:hover .media-details {
-  height: 100%;
+  height: calc(100% + 1px); /* Need that extra bit otherwise it sometimes doesn't cover the entire image */
   transition: height 0.1s ease-out;
 }
 
